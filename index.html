@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NODO | Red Creativa Multimedia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- LOGIN CON USUARIO, CONTRASEÑA Y ROL -->
+  <section class="login-screen" id="loginScreen">
+    <div class="login-card login-card--pro">
+      <div class="login-layout">
+        <aside class="login-showcase">
+          <a class="brand login-brand" href="#" aria-label="NODO">
+            <span class="brand-mark">N</span>
+            <span>NODO</span>
+          </a>
+          <span class="eyebrow">Plataforma creativa profesional</span>
+          <h1>Conecta talento multimedia con oportunidades reales.</h1>
+          <p>
+            NODO reúne portafolios, skills, proyectos, vacantes y mensajería en una sola experiencia para estudiantes, egresados y contratantes.
+          </p>
+
+          <div class="login-highlights">
+            <article>
+              <strong>Explora talento</strong>
+              <span>Filtra por 3D, animación, dibujo, UI/UX y más.</span>
+            </article>
+            <article>
+              <strong>Impulsa tu perfil</strong>
+              <span>Crea portafolio, actualiza skills y comparte tus proyectos.</span>
+            </article>
+            <article>
+              <strong>Conecta y negocia</strong>
+              <span>Habla con contratantes, envía propuestas y recibe notificaciones.</span>
+            </article>
+          </div>
+
+          <div class="login-plan-tags">
+            <span>Estudiante · Gratis</span>
+            <span>Egresado · $20/mes o $200/año</span>
+            <span>Contratante · 7 días de prueba</span>
+          </div>
+        </aside>
+
+        <div class="login-form-panel">
+          <span class="eyebrow" id="authEyebrow">Acceso</span>
+          <h2 id="authTitle">Inicia sesión en tu cuenta</h2>
+          <p class="login-intro" id="authDescription">
+            Ingresa tu usuario, contraseña y elige el tipo de cuenta para continuar.
+          </p>
+
+          <div class="auth-switch" role="tablist" aria-label="Acceso a NODO">
+            <button type="button" class="auth-tab active" id="showLoginTab">Iniciar sesión</button>
+            <button type="button" class="auth-tab" id="showRegisterTab">Crear cuenta</button>
+          </div>
+
+          <form id="loginForm" class="login-form">
+            <label>
+              Usuario
+              <input type="text" id="loginName" placeholder="Ej. alberto.soriano o agencia.nodo" autocomplete="username" required />
+            </label>
+
+            <label>
+              Contraseña
+              <input type="password" id="loginPassword" placeholder="Ingresa tu contraseña" autocomplete="current-password" required />
+            </label>
+
+            <div class="role-selector" aria-label="Selecciona tu tipo de usuario">
+              <button type="button" class="role-card active" data-role-option="student">
+                <span>🎓</span>
+                <strong>Estudiante</strong>
+                <small>Acceso gratuito a portafolio, skills, ofertas y mensajería.</small>
+              </button>
+              <button type="button" class="role-card" data-role-option="alumni">
+                <span>🧑‍🎓</span>
+                <strong>Egresado</strong>
+                <small>Perfil profesional con suscripción mensual o anual.</small>
+              </button>
+              <button type="button" class="role-card" data-role-option="contractor">
+                <span>💼</span>
+                <strong>Contratante</strong>
+                <small>Publica vacantes, descubre talento y prueba la plataforma por 7 días.</small>
+              </button>
+            </div>
+
+            <div class="subscription-login-box hidden" id="loginPlanBox">
+              <div>
+                <span class="eyebrow" id="loginPlanEyebrow">Plan de suscripción</span>
+                <h3 id="loginPlanTitle">Elige un plan</h3>
+                <p id="loginPlanDescription">Selecciona el plan que mejor se adapte a tu cuenta.</p>
+              </div>
+              <div class="plan-toggle" role="radiogroup" aria-label="Planes de suscripción">
+                <label class="plan-option active">
+                  <input type="radio" name="subscriptionPlan" value="monthly" checked />
+                  <strong>$20 MXN</strong>
+                  <span>Mensual</span>
+                </label>
+                <label class="plan-option">
+                  <input type="radio" name="subscriptionPlan" value="annual" />
+                  <strong>$200 MXN</strong>
+                  <span>Anual</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="free-login-note" id="freeLoginNote">
+              <strong>Estudiante:</strong> acceso gratuito para crear tu perfil, portafolio, propuestas y conversaciones.
+            </div>
+
+            <button class="btn primary" type="submit">Iniciar sesión</button>
+          </form>
+
+          <form id="registerForm" class="login-form hidden">
+            <div class="form-grid-2">
+              <label>
+                Nombre completo
+                <input type="text" id="registerFullName" placeholder="Ej. Alberto Soriano" autocomplete="name" required />
+              </label>
+
+              <label>
+                Usuario
+                <input type="text" id="registerUsername" placeholder="Ej. alberto.soriano" autocomplete="username" required />
+              </label>
+            </div>
+
+            <label>
+              Correo electrónico
+              <input type="email" id="registerEmail" placeholder="correo@ejemplo.com" autocomplete="email" required />
+            </label>
+
+            <div class="form-grid-2">
+              <label>
+                Contraseña
+                <input type="password" id="registerPassword" placeholder="Crea una contraseña" autocomplete="new-password" required />
+              </label>
+
+              <label>
+                Confirmar contraseña
+                <input type="password" id="registerConfirmPassword" placeholder="Repite tu contraseña" autocomplete="new-password" required />
+              </label>
+            </div>
+
+            <div class="role-selector" aria-label="Selecciona tu tipo de cuenta">
+              <button type="button" class="role-card active" data-register-role-option="student">
+                <span>🎓</span>
+                <strong>Estudiante</strong>
+                <small>Gratis para crear portafolio, aplicar a ofertas y usar mensajes.</small>
+              </button>
+              <button type="button" class="role-card" data-register-role-option="alumni">
+                <span>🧑‍🎓</span>
+                <strong>Egresado</strong>
+                <small>Activa tu perfil profesional con plan mensual o anual.</small>
+              </button>
+              <button type="button" class="role-card" data-register-role-option="contractor">
+                <span>💼</span>
+                <strong>Contratante</strong>
+                <small>Comienza con prueba de 7 días para publicar ofertas.</small>
+              </button>
+            </div>
+
+            <div class="subscription-login-box hidden" id="registerPlanBox">
+              <div>
+                <span class="eyebrow" id="registerPlanEyebrow">Plan de suscripción</span>
+                <h3 id="registerPlanTitle">Elige un plan</h3>
+                <p id="registerPlanDescription">Selecciona el plan que mejor se adapte a tu cuenta.</p>
+              </div>
+              <div class="plan-toggle" role="radiogroup" aria-label="Planes de suscripción para registro">
+                <label class="plan-option active">
+                  <input type="radio" name="registerSubscriptionPlan" value="monthly" checked />
+                  <strong>$20 MXN</strong>
+                  <span>Mensual</span>
+                </label>
+                <label class="plan-option">
+                  <input type="radio" name="registerSubscriptionPlan" value="annual" />
+                  <strong>$200 MXN</strong>
+                  <span>Anual</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="free-login-note" id="registerFreeNote">
+              <strong>Estudiante:</strong> tu cuenta inicia con acceso gratuito.
+            </div>
+
+            <label class="terms-check">
+              <input type="checkbox" id="registerTerms" required />
+              <span>Acepto crear mi cuenta en NODO y usar mis datos para personalizar la experiencia.</span>
+            </label>
+
+            <button class="btn primary" type="submit">Crear cuenta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="app-shell hidden" id="appShell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" data-section="inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">N</span>
+        <span>NODO</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="nav-link active" data-section="inicio" data-visible="student alumni contractor">Inicio</a>
+        <a href="#explorar" class="nav-link" data-section="explorar" data-visible="student alumni contractor">Explorar</a>
+        <a href="#trabajos" class="nav-link" data-section="trabajos" data-visible="student alumni contractor"><span id="jobsNavText">Ofertas</span></a>
+        <a href="#mensajes" class="nav-link nav-with-badge" data-section="mensajes" data-visible="student alumni contractor">Mensajes <span class="badge hidden" id="messageBadge">0</span></a>
+        <a href="#notificaciones" class="nav-link nav-with-badge" data-section="notificaciones" data-visible="student alumni contractor">Notificaciones <span class="badge hidden" id="notificationBadge">0</span></a>
+        <a href="#perfil" class="nav-link" data-section="perfil" data-visible="student alumni">Perfil</a>
+        <a href="#plan" class="nav-link" data-section="plan" data-visible="alumni contractor">Plan</a>
+      </nav>
+
+      <div class="user-actions">
+        <div class="user-chip" id="userChip">Usuario</div>
+        <button class="btn ghost compact" id="logoutBtn">Cambiar usuario</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- INICIO -->
+      <section id="inicio" class="page active-page">
+        <div class="hero">
+          <div class="hero-content">
+            <span class="eyebrow" id="homeEyebrow">Plataforma para diseñadores multimedia</span>
+            <h1 id="homeTitle">Conecta tu talento con proyectos, clientes y oportunidades reales.</h1>
+            <p id="homeDescription">
+              NODO es una red creativa tipo Behance donde puedes mostrar tu portafolio,
+              buscar talento por skill, editar tu perfil profesional y negociar ofertas de trabajo.
+            </p>
+            <div class="hero-actions">
+              <button class="btn primary" id="homePrimaryAction" data-section="explorar">Explorar talentos</button>
+              <button class="btn secondary" id="homeSecondaryAction" data-section="perfil">Crear mi portafolio</button>
+            </div>
+          </div>
+          <div class="hero-card floating">
+            <div class="mini-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <div class="preview-card orange"></div>
+              <div class="preview-row"><span></span><span></span></div>
+              <div class="skill-pills">
+                <span>3D</span><span>UI/UX</span><span>Motion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="stats-grid">
+          <article>
+            <strong id="statProjects">0</strong>
+            <span>Proyectos publicados</span>
+          </article>
+          <article>
+            <strong id="statCreators">0</strong>
+            <span>Perfiles creativos</span>
+          </article>
+          <article>
+            <strong id="statJobs">0</strong>
+            <span>Ofertas activas</span>
+          </article>
+        </section>
+
+        <section class="section-head">
+          <div>
+            <span class="eyebrow">Skills populares</span>
+            <h2>Busca por especialidad</h2>
+          </div>
+          <button class="btn ghost" data-section="explorar">Ver todo</button>
+        </section>
+
+        <div class="category-strip" id="homeCategories"></div>
+      </section>
+
+      <!-- EXPLORAR -->
+      <section id="explorar" class="page">
+        <section class="section-head with-search">
+          <div>
+            <span class="eyebrow" id="exploreEyebrow">Explorar proyectos</span>
+            <h2 id="exploreTitle">Encuentra talento por skill</h2>
+            <p id="exploreText">Filtra por área multimedia y revisa piezas de portafolio.</p>
+          </div>
+          <div class="searchbox">
+            <input type="search" id="searchInput" placeholder="Buscar: 3D, animación, branding..." />
+            <span>⌕</span>
+          </div>
+        </section>
+
+        <div class="filters" id="filters"></div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+        <p class="empty-state hidden" id="emptyProjects">No encontramos proyectos con ese filtro.</p>
+      </section>
+
+      <!-- TRABAJOS -->
+      <section id="trabajos" class="page">
+        <section class="section-head">
+          <div>
+            <span class="eyebrow" id="jobsEyebrow">Bolsa de trabajo</span>
+            <h2 id="jobsTitle">Ofertas y colaboraciones</h2>
+            <p id="jobsDescription">Publica una oportunidad o revisa trabajos donde el precio puede tratarse con el contratante.</p>
+          </div>
+          <button class="btn primary" id="openJobModal" data-visible="contractor">Publicar oferta</button>
+        </section>
+
+        <div class="role-note" id="jobsRoleNote"></div>
+        <div class="jobs-grid" id="jobsGrid"></div>
+      </section>
+
+      <!-- MENSAJES -->
+      <section id="mensajes" class="page">
+        <section class="section-head">
+          <div>
+            <span class="eyebrow">Mensajería</span>
+            <h2>Conversaciones con creativos y contratantes</h2>
+            <p>Negocia precio, tiempos de entrega y detalles del proyecto desde esta sección.</p>
+          </div>
+        </section>
+
+        <div class="messaging-layout">
+          <aside class="conversation-list" id="conversationList"></aside>
+          <section class="chat-panel">
+            <div class="chat-empty" id="chatEmpty">
+              <strong>Selecciona una conversación</strong>
+              <p>Cuando contactes una oferta o un talento, aparecerá aquí.</p>
+            </div>
+            <div class="chat-box hidden" id="chatBox">
+              <div class="chat-header">
+                <div>
+                  <strong id="chatTitle">Conversación</strong>
+                  <span id="chatSubtitle">Contexto</span>
+                </div>
+                <button class="btn ghost compact" id="markChatReadBtn">Marcar leída</button>
+              </div>
+              <div class="message-thread" id="messageThread"></div>
+              <form class="message-form" id="messageForm">
+                <input type="text" id="messageInput" placeholder="Escribe un mensaje..." required />
+                <button class="btn primary compact" type="submit">Enviar</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- NOTIFICACIONES -->
+      <section id="notificaciones" class="page">
+        <section class="section-head">
+          <div>
+            <span class="eyebrow">Centro de actividad</span>
+            <h2>Notificaciones</h2>
+            <p>Revisa nuevas propuestas, mensajes y contactos de interés.</p>
+          </div>
+          <button class="btn ghost" id="markAllNotificationsRead">Marcar todas como leídas</button>
+        </section>
+        <div class="notifications-list" id="notificationsList"></div>
+      </section>
+
+      <!-- PLAN -->
+      <section id="plan" class="page">
+        <section class="section-head">
+          <div>
+            <span class="eyebrow">Suscripción</span>
+            <h2>Plan de acceso</h2>
+            <p>Consulta o cambia el plan del egresado o contratante dentro del prototipo.</p>
+          </div>
+        </section>
+
+        <div class="subscription-layout">
+          <article class="subscription-status-card" id="subscriptionStatusCard"></article>
+          <div class="subscription-actions" id="subscriptionActions"></div>
+        </div>
+      </section>
+
+      <!-- PERFIL -->
+      <section id="perfil" class="page">
+        <div class="profile-layout">
+          <aside class="profile-card">
+            <div class="avatar" id="profileAvatar">ND</div>
+            <h2 id="profileNameView">Nombre creativo</h2>
+            <p id="profileRoleView">Diseñador Multimedia</p>
+            <p id="profileBioView">Especialista en diseño visual, 3D, animación y experiencias digitales.</p>
+            <div class="profile-skills" id="profileSkillsView"></div>
+          </aside>
+
+          <div class="profile-panel">
+            <div class="tabs">
+              <button class="tab active" data-tab="editarPerfil">Editar perfil</button>
+              <button class="tab" data-tab="misProyectos">Mi portafolio</button>
+            </div>
+
+            <div class="tab-panel active-tab" id="editarPerfil">
+              <form id="profileForm" class="form-card">
+                <label>
+                  Nombre completo
+                  <input type="text" id="profileName" required />
+                </label>
+                <label>
+                  Rol profesional
+                  <input type="text" id="profileRole" required />
+                </label>
+                <label>
+                  Biografía breve
+                  <textarea id="profileBio" rows="4" required></textarea>
+                </label>
+                <label>
+                  Agregar skill
+                  <div class="inline-input">
+                    <input type="text" id="skillInput" placeholder="Ej. Motion Graphics" />
+                    <button type="button" class="btn secondary" id="addSkillBtn">Agregar</button>
+                  </div>
+                </label>
+                <div class="editable-skills" id="editableSkills"></div>
+                <button type="submit" class="btn primary">Guardar perfil</button>
+              </form>
+            </div>
+
+            <div class="tab-panel" id="misProyectos">
+              <div class="panel-actions">
+                <div>
+                  <h3>Proyectos subidos</h3>
+                  <p>Agrega piezas a tu portafolio y aparecerán en Explorar para los contratantes.</p>
+                </div>
+                <button class="btn primary" id="openProjectModal">Subir proyecto</button>
+              </div>
+              <div class="my-projects" id="myProjects"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL PROYECTO -->
+    <dialog class="modal" id="projectModal">
+      <form id="projectForm" method="dialog" class="modal-content">
+        <button class="close" type="button" data-close="projectModal">×</button>
+        <h2>Subir proyecto</h2>
+        <label>
+          Título del proyecto
+          <input type="text" id="projectTitle" placeholder="Ej. Identidad visual para cafetería" required />
+        </label>
+        <label>
+          Skill principal
+          <select id="projectSkill" required></select>
+        </label>
+        <label>
+          Descripción
+          <textarea id="projectDescription" rows="4" placeholder="Describe el objetivo, proceso o herramientas usadas" required></textarea>
+        </label>
+        <label>
+          Color de portada
+          <input type="color" id="projectColor" value="#ff7a18" />
+        </label>
+        <label class="file-upload-label">
+          Archivo del proyecto
+          <input type="file" id="projectFile" accept="image/*,video/*,.pdf,application/pdf" />
+          <small>Puedes subir una imagen, video o PDF desde tu computadora. Tamaño máximo recomendado: 5 MB.</small>
+        </label>
+        <div class="file-preview empty" id="projectFilePreview">
+          <span>Sin archivo seleccionado</span>
+        </div>
+        <button class="btn primary" type="submit">Publicar proyecto</button>
+      </form>
+    </dialog>
+
+    <!-- MODAL TRABAJO -->
+    <dialog class="modal" id="jobModal">
+      <form id="jobForm" method="dialog" class="modal-content">
+        <button class="close" type="button" data-close="jobModal">×</button>
+        <h2>Publicar oferta</h2>
+        <label>
+          Título de la oferta
+          <input type="text" id="jobTitle" placeholder="Ej. Animación para campaña digital" required />
+        </label>
+        <label>
+          Skill requerida
+          <select id="jobSkill" required></select>
+        </label>
+        <label>
+          Presupuesto / precio a tratar
+          <input type="text" id="jobBudget" placeholder="Ej. $3,500 MXN a tratar" required />
+        </label>
+        <label>
+          Descripción del trabajo
+          <textarea id="jobDescription" rows="4" placeholder="Explica qué necesitas del talento creativo" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Publicar oferta</button>
+      </form>
+    </dialog>
+
+    <!-- MODAL PROPUESTA DE CREATIVO -->
+    <dialog class="modal" id="proposalModal">
+      <form id="proposalForm" method="dialog" class="modal-content">
+        <button class="close" type="button" data-close="proposalModal">×</button>
+        <h2>Enviar propuesta</h2>
+        <p id="proposalJobTitle" class="muted-text">Oferta seleccionada</p>
+        <input type="hidden" id="proposalJobId" />
+        <label>
+          Tu precio propuesto
+          <input type="text" id="proposalPrice" placeholder="Ej. $2,800 MXN a tratar" required />
+        </label>
+        <label>
+          Mensaje para el contratante
+          <textarea id="proposalMessage" rows="4" placeholder="Hola, me interesa esta oferta. Puedo apoyar con..." required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Enviar y abrir chat</button>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="infoModal">
+      <div class="modal-content small-modal">
+        <button class="close" type="button" data-close="infoModal">×</button>
+        <h2 id="infoTitle">Listo</h2>
+        <p id="infoMessage">Acción realizada.</p>
+        <button class="btn primary" type="button" data-close="infoModal">Entendido</button>
+      </div>
+    </dialog>
+
+    <footer>
+      <p>NODO © 2026 · Red creativa para Diseño Multimedia</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
