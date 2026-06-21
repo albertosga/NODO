@@ -1638,3 +1638,47 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* LOGO NODO */
+.brand-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-logo-small {
+  width: 180px;
+}
+
+.login-brand {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(6, 24, 51, 0.15);
+}
+
+.login-showcase .brand-logo,
+.login-form-panel .brand-logo,
+.topbar .brand-logo {
+  filter: none;
+}
+
+.brand-mark {
+  display: none;
+}
+
+
+@media (max-width: 640px) {
+  .brand-logo {
+    width: 165px;
+  }
+
+  .brand-logo-small {
+    width: 130px;
+  }
+}

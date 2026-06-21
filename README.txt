@@ -30,3 +30,11 @@ Notas:
 - Este proyecto funciona en frontend, sin base de datos.
 - La información se guarda en tu navegador con localStorage.
 - Para una versión real se puede conectar con PHP + MySQL.
+
+
+Actualización:
+- Logo NODO integrado en SVG.
+- Reemplaza la marca anterior del header y del login.
+- El archivo del logo se encuentra en assets/logo-nodo.svg.
+
+- Logo actualizado usando la imagen aprobada por el usuario, recortada sin estiramiento.
