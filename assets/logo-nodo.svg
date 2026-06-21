@@ -1,0 +1,32 @@
+<svg width="560" height="160" viewBox="0 0 560 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">NODO</title>
+  <desc id="desc">Logo de NODO con una N estilizada de nodos conectados en azul y naranja.</desc>
+  <defs>
+    <linearGradient id="nodoGradient" x1="45" y1="28" x2="230" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1578D4"/>
+      <stop offset="0.48" stop-color="#1578D4"/>
+      <stop offset="0.68" stop-color="#6E70B7"/>
+      <stop offset="1" stop-color="#FF7A18"/>
+    </linearGradient>
+  </defs>
+
+  <!-- N principal: nodos + conexión -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M55 116V44" stroke="#1578D4" stroke-width="18"/>
+    <path d="M55 44L180 116" stroke="url(#nodoGradient)" stroke-width="18"/>
+    <path d="M180 116V44" stroke="#FF7A18" stroke-width="18"/>
+    <path d="M92 80L142 109" stroke="url(#nodoGradient)" stroke-width="14"/>
+  </g>
+
+  <!-- Nodos -->
+  <circle cx="55" cy="44" r="20" fill="white" stroke="#1578D4" stroke-width="12"/>
+  <circle cx="55" cy="116" r="20" fill="white" stroke="#1578D4" stroke-width="12"/>
+  <circle cx="180" cy="44" r="20" fill="white" stroke="#FF7A18" stroke-width="12"/>
+
+  <!-- ODO -->
+  <g fill="none" stroke="#061833" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="282" cy="80" r="42"/>
+    <path d="M365 38H398C422 38 441 57 441 80C441 103 422 122 398 122H365V38Z"/>
+    <circle cx="508" cy="80" r="42"/>
+  </g>
+</svg>
